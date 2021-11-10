@@ -21,6 +21,11 @@ import "../css/app.css"
 
 // Include phoenix_html to handle method=PUT/DELETE in forms and buttons.
 import "phoenix_html"
+import user_socket from "./user_socket"
+import conversation from "./conversation"
+
+conversation.init(user_socket)
+
 // Establish Phoenix Socket and LiveView configuration.
 import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"

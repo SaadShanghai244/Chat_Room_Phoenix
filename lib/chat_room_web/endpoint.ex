@@ -9,6 +9,9 @@ defmodule ChatRoomWeb.Endpoint do
     key: "_chat_room_key",
     signing_salt: "QaQoeP0M"
   ]
+  socket "/socket", ChatRoomWeb.UserSocket
+
+
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 

@@ -1,7 +1,9 @@
 defmodule ChatRoomWeb.PageController do
   use ChatRoomWeb, :controller
+  alias ChatRoom.Chat
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    messages = Chat.list_messages()
+    render(conn, "index.html", messages: messages)
   end
 end
